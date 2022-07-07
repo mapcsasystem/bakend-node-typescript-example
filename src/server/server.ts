@@ -32,9 +32,7 @@ class Server {
     });
   }
   listen() {
-    this.app.listen(this.port, () => {
-      console.log(`Escuchando en puerto ${this.port}`);
-    });
+    this.app.listen(this.port, () => {return;});
   }
 }
 

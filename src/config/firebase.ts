@@ -9,6 +9,6 @@ const firebaseConfig = {
   messagingSenderId: process.env.MESSAGINGSENDERID,
   appId: process.env.APPID
 };
-
+console.log(firebaseConfig);
 const p = () => initializeApp(firebaseConfig);
 export default p;
