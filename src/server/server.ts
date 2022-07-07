@@ -28,11 +28,10 @@ class Server {
       res.status(200).json({
         pong: 'pong'
       });
-
     });
   }
   listen() {
-    this.app.listen(this.port, () => {return;});
+    this.app.listen(this.port, () => { return; });
   }
 }
 
