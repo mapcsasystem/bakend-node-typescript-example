@@ -30,6 +30,7 @@
     "firebase": "^9.8.4"
   },
   "engines": {
-    "node": "16"
+    "node": "16",
+    "npm":"8"
   }
 }
