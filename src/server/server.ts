@@ -1,34 +1,37 @@
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-class Server{
-  private app:Application;
-  private port='';
-    
-  constructor(){
+import p from '../config/firebase';
+class Server {
+  private app: Application;
+  private port = '';
+
+  constructor() {
     dotenv.config();
-   
-    this.app=express();
+
+    this.app = express();
     this.port = process.env.PORT || '3000';
     this.middlewares();
     this.routes();
     this.listen();
   }
 
-  middlewares(){
+  middlewares() {
     this.app.use(cors());
     this.app.use(express.json());
+    this.app.use(express.static('public'));
+    p();
   }
 
-  routes(){
+  routes() {
     this.app.get('/ping', (_req: Request, res: Response) => {
       res.status(200).json({
-        pong: 'ponggg'
+        pong: 'pong'
       });
-      
+
     });
   }
-  listen(){
+  listen() {
     this.app.listen(this.port, () => {
       console.log(`Escuchando en puerto ${this.port}`);
     });

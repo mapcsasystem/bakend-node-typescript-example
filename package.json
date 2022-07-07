@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon build/src/index.js",
-    "start": "node build/index.js"
+    "start": "node build/src/index.js",
+    "build":"tsc"
+
   },
   "keywords": [],
   "author": "",
@@ -24,6 +26,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "firebase": "^9.8.4"
   }
 }
