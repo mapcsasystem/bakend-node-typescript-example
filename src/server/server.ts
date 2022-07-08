@@ -1,14 +1,16 @@
 import express, { Application } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import firebaseConf from '../config/firebase';
-import routerApiV1 from '../routes';
+import firebaseConf from '../api-v1-firebase/config/firebase';
+import routerApiV1 from '../api-v1-firebase/routes';
+
 class Server {
+
     private app: Application=express();
-    private port = process.env.PORT || '3000';
+    private port:string = process.env.PORT || '3000';
+    
     constructor() {
         dotenv.config();
-
         this.middlewares();
         this.routes();
         this.listen();
@@ -22,7 +24,7 @@ class Server {
     }
 
     routes() {
-        routerApiV1(this.app);
+        routerApiV1(this.app);// /api/v1
     }
 
     listen() {
